@@ -127,13 +127,13 @@ t.gen_text("\x1b[96m=== Tech Stack ===\x1b[0m", row_num=3)
 t.clone_frame(3)
 
 skills = [
-    ("\x1b[94mCloud:\x1b[0m       ", "AWS, GCP, OCI, Cloudflare"),
-    ("\x1b[94mDevOps:\x1b[0m      ", "Terraform, Kubernetes, Docker, Git"),
-    ("\x1b[94mCI/CD:\x1b[0m       ", "GitLab, GitHub Actions"),
-    ("\x1b[94mMonitoring:\x1b[0m  ", "Grafana, Prometheus, Jaeger, Loki"),
-    ("\x1b[94mTools:\x1b[0m       ", "Postman, RabbitMQ, MongoDB"),
-    ("\x1b[94mOS:\x1b[0m          ", "macOS, Debian"),
-    ("\x1b[94mLanguages:\x1b[0m   ", "Java, Python"),
+    ("\x1b[94mCloud:\x1b[0m       ", "AWS (RDS, EC2, S3, Lambda), CloudFront"),
+    ("\x1b[94mDevOps & CI/CD:\x1b[0m      ", "Docker, Git, GitHub Actions"),
+    ("\x1b[94mMonitoring:\x1b[0m  ", "Grafana, Prometheus"),
+    ("\x1b[94mTools:\x1b[0m       ", "Postman, RabbitMQ, PostgreSQL, DynamoDB"),
+    ("\x1b[94mFrameworks:\x1b[0m       ", "Go Gin HTTP, Go JWT, Java Swing"),
+    ("\x1b[94mOS:\x1b[0m          ", "Fedora, Niri WM"),
+    ("\x1b[94mLanguages:\x1b[0m   ", "Golang, Java, Python, Bash, SQL, JS"),
 ]
 
 for i, (label, value) in enumerate(skills):
