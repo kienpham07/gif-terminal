@@ -77,13 +77,11 @@ if has_stats:
     repos_count = total_repos if total_repos else github_stats.total_repo_contributions
     stats_lines = [
         f"\x1b[93mName:\x1b[0m        {github_stats.account_name or USERNAME}",
-        f"\x1b[93mFollowers:\x1b[0m   {github_stats.total_followers}",
         f"\x1b[93mStars:\x1b[0m       {github_stats.total_stargazers}",
         f"\x1b[93mCommits:\x1b[0m     {github_stats.total_commits_last_year} (last year)",
         f"\x1b[93mPRs:\x1b[0m         {github_stats.total_pull_requests_made}",
         f"\x1b[93mIssues:\x1b[0m      {github_stats.total_issues}",
         f"\x1b[93mRepos:\x1b[0m       {repos_count}",
-        f"\x1b[93mRank:\x1b[0m        {github_stats.user_rank.level} ({github_stats.user_rank.percentile:.1f}%)",
     ]
     
     # Top languages
@@ -128,10 +126,10 @@ t.clone_frame(3)
 
 skills = [
     ("\x1b[94mCloud:\x1b[0m       ", "AWS (RDS, EC2, S3, Lambda), CloudFront"),
-    ("\x1b[94mDevOps & CI/CD:\x1b[0m      ", "Docker, Git, GitHub Actions"),
+    ("\x1b[94mDevOps & CI/CD:\x1b[0m", "Docker, Git, GitHub Actions"),
     ("\x1b[94mMonitoring:\x1b[0m  ", "Grafana, Prometheus"),
     ("\x1b[94mTools:\x1b[0m       ", "Postman, RabbitMQ, PostgreSQL, DynamoDB"),
-    ("\x1b[94mFrameworks:\x1b[0m       ", "Go Gin HTTP, Go JWT, Java Swing"),
+    ("\x1b[94mFrameworks:\x1b[0m  ", "Go Gin HTTP, Go JWT, Java Swing"),
     ("\x1b[94mOS:\x1b[0m          ", "Fedora, Niri WM"),
     ("\x1b[94mLanguages:\x1b[0m   ", "Golang, Java, Python, Bash, SQL, JS"),
 ]
@@ -149,7 +147,7 @@ final_row = 5 + len(skills)
 t.gen_prompt(row_num=final_row)
 t.gen_typing_text("echo 'Thanks for visiting my profile!'", row_num=final_row, contin=True, speed=1)
 t.clone_frame(5)
-t.gen_text("\x1b[92mThanks for visiting my profile!\x1b[0m", row_num=final_row+1)
+t.gen_text("\x1b[92mThanks for visiting my profile! - Have a good day.\x1b[0m", row_num=final_row+1)
 t.clone_frame(40)
 
 # Generate the GIF
