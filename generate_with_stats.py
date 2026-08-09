@@ -125,12 +125,12 @@ t.gen_text("\x1b[96m=== Tech Stack ===\x1b[0m", row_num=3)
 t.clone_frame(3)
 
 skills = [
-    ("\x1b[94mCloud:\x1b[0m       ", "AWS (RDS, EC2, S3, Lambda), CloudFront"),
-    ("\x1b[94mDevOps & CI/CD:\x1b[0m", "Docker, Git, GitHub Actions"),
-    ("\x1b[94mMonitoring:\x1b[0m  ", "Grafana, Prometheus"),
-    ("\x1b[94mTools:\x1b[0m       ", "Postman, RabbitMQ, PostgreSQL, DynamoDB"),
+    ("\x1b[94mCloud:\x1b[0m       ", "AWS (RDS, EC2, S3, Lambda)"),
+    ("\x1b[94mCI/CD & Monitor:\x1b[0m ", "Git, GitHub Actions, Grafana, Prometheus"),
+    ("\x1b[94mTools:\x1b[0m       ", "Docker, Terraform, RabbitMQ, Postman"),
     ("\x1b[94mFrameworks:\x1b[0m  ", "Go Gin HTTP, Go JWT, Java Swing"),
-    ("\x1b[94mOS:\x1b[0m          ", "Fedora, Niri WM"),
+    ("\x1b[94mDatabases:\x1b[0m   ", "PostgreSQL, DynamoDB, Redis"),
+    ("\x1b[94mOS:\x1b[0m          ", "Linux (Fedora with Niri WM)"),
     ("\x1b[94mLanguages:\x1b[0m   ", "Golang, Java, Python, Bash, SQL, JS"),
 ]
 
