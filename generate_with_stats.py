@@ -83,12 +83,15 @@ if has_stats:
         f"\x1b[93mIssues:\x1b[0m      {github_stats.total_issues}",
         f"\x1b[93mRepos:\x1b[0m       {repos_count}",
     ]
-    
+
+    """
     # Top languages
     if github_stats.languages_sorted:
         top_langs = github_stats.languages_sorted[:3]
         langs_str = ", ".join([f"{lang[0]} ({lang[1]}%)" for lang in top_langs])
         stats_lines.append(f"\x1b[93mTop Langs:\x1b[0m   {langs_str}")
+    """
+    
 else:
     # Example data
     stats_lines = [
@@ -145,9 +148,9 @@ t.clone_frame(5)
 # -- Final message --
 final_row = 5 + len(skills)
 t.gen_prompt(row_num=final_row)
-t.gen_typing_text("echo 'Thanks for visiting my profile!'", row_num=final_row, contin=True, speed=1)
+t.gen_typing_text("echo 'Thanks for visiting my profile! - Have a great day.'", row_num=final_row, contin=True, speed=1)
 t.clone_frame(5)
-t.gen_text("\x1b[92mThanks for visiting my profile! - Have a good day.\x1b[0m", row_num=final_row+1)
+t.gen_text("\x1b[92mThanks for visiting my profile! - Have a great day.\x1b[0m", row_num=final_row+1)
 t.clone_frame(40)
 
 # Generate the GIF
