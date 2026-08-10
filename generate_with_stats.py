@@ -197,7 +197,7 @@ r_linkedin = final_row + 4
 t.gen_prompt(row_num=r_linkedin)
 t.gen_typing_text("echo 'LinkedIn: linkedin.com/in/kienph'", row_num=r_linkedin, contin=True, speed=1)
 t.clone_frame(5)
-t.gen_text("\x1b[92mLinkedIn: linkedin.com/in/kienph\x1b[0m", row_num=r_linkedin + 1)contact_prompt_row = final_row + 2
+t.gen_text("\x1b[92mLinkedIn: linkedin.com/in/kienph\x1b[0m", row_num=r_linkedin + 1)
 
 # Pause for ~11-14 seconds before looping back to the start (Frame being duplicated duration)
 t.clone_frame(200)
