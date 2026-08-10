@@ -175,11 +175,25 @@ t.clone_frame(5)
 
 # -- Final message --
 final_row = 5 + len(skills)
+
+# Echo 1: Thanks message
 t.gen_prompt(row_num=final_row)
-t.gen_typing_text("echo 'Thanks for visiting my profile! - Have a great day.'", row_num=final_row, contin=True, speed=1)
+t.gen_typing_text("echo 'Thanks for visiting my profile! - Have a great day :D'", row_num=final_row, contin=True, speed=1)
 t.clone_frame(5)
-t.gen_text("\x1b[92mThanks for visiting my profile! - Have a great day.\x1b[0m", row_num=final_row+1)
-t.clone_frame(40)
+t.gen_text("\x1b[92mThanks for visiting my profile! - Have a great day :D\x1b[0m", row_num=final_row+1)
+t.clone_frame(5)
+
+# Echo 2: Contact info
+contact_prompt_row = final_row + 2
+contact_output_row = final_row + 3
+
+t.gen_prompt(row_num=contact_prompt_row)
+t.gen_typing_text("echo 'Contact me via kienph.work@gmail.com | LinkedIn: linkedin.com/in/kienph'", row_num=contact_prompt_row, contin=True, speed=1)
+t.clone_frame(5)
+t.gen_text("\x1b[92mContact me via kienph.work@gmail.com | LinkedIn: linkedin.com/in/kienph\x1b[0m", row_num=contact_output_row)
+
+# Pause for ~8-10 seconds before looping back to the start
+t.clone_frame(150)
 
 # Generate the GIF
 t.gen_gif()
