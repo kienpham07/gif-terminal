@@ -5,6 +5,7 @@ import requests
 
 # Font configuration for logo animation
 FONT_FILE_LOGO = "./fonts/vtks-blocketo.regular.ttf"
+FONT_FILE_DEFAULT = "./fonts/gohufont-uni-14.pil"
 
 # ============================================
 # Terminal GIF with GitHub Stats
@@ -78,8 +79,8 @@ for i in range(len(effect_lines)):
     t.delete_row(mid_row + 1)
     t.gen_text(effect_lines[i], mid_row + 1, mid_col + 1)
 
-# Reset to default terminal font
-t.set_font(default_font, default_font_size)
+# Reset back to default terminal font
+t.set_font(FONT_FILE_DEFAULT, 15)
 t.clear_frame()
 
 # -- Initial prompt --
