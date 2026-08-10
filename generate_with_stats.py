@@ -184,16 +184,23 @@ t.gen_text("\x1b[92mThanks for visiting my profile! - Have a great day :D\x1b[0m
 t.clone_frame(5)
 
 # Echo 2: Contact info
-contact_prompt_row = final_row + 2
-contact_output_row = final_row + 3
-
-t.gen_prompt(row_num=contact_prompt_row)
-t.gen_typing_text("echo 'Contact me via kienph.work@gmail.com | LinkedIn: linkedin.com/in/kienph'", row_num=contact_prompt_row, contin=True, speed=1)
+    # 1. Email
+r_email = final_row + 2
+t.gen_prompt(row_num=r_email)
+t.gen_typing_text("echo 'Email: kienph.work@gmail.com'", row_num=r_email, contin=True, speed=1)
 t.clone_frame(5)
-t.gen_text("\x1b[92mContact me via kienph.work@gmail.com | LinkedIn: linkedin.com/in/kienph\x1b[0m", row_num=contact_output_row)
+t.gen_text("\x1b[92mEmail: kienph.work@gmail.com\x1b[0m", row_num=r_email + 1)
+t.clone_frame(5)
 
-# Pause for ~8-10 seconds before looping back to the start
-t.clone_frame(150)
+    # 2. LinkedIn
+r_linkedin = final_row + 4
+t.gen_prompt(row_num=r_linkedin)
+t.gen_typing_text("echo 'LinkedIn: linkedin.com/in/kienph'", row_num=r_linkedin, contin=True, speed=1)
+t.clone_frame(5)
+t.gen_text("\x1b[92mLinkedIn: linkedin.com/in/kienph\x1b[0m", row_num=r_linkedin + 1)contact_prompt_row = final_row + 2
+
+# Pause for ~11-14 seconds before looping back to the start (Frame being duplicated duration)
+t.clone_frame(200)
 
 # Generate the GIF
 t.gen_gif()
