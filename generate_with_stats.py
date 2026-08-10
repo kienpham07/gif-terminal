@@ -59,6 +59,8 @@ total_repos = get_total_repos(USERNAME)
 t = gifos.Terminal(width=700, height=450, xpad=10, ypad=10)
 
 # -- Boot / Logo Scramble Animation --
+t.toggle_show_cursor(False)  # Hide cursor so logo font doesn't draw missing character box
+
 t.gen_text("Initiating Boot Sequence ", row_num=1, contin=True)
 t.gen_typing_text(".....", row_num=1, contin=True)
 t.gen_text("\x1b[96m", row_num=1, count=0, contin=True)  # Set color buffer
@@ -75,9 +77,10 @@ for i in range(len(effect_lines)):
     t.delete_row(mid_row + 1)
     t.gen_text(effect_lines[i], mid_row + 1, mid_col + 1)
 
-# Reset back to default terminal font
+# Reset back to default terminal font and show cursor
 t.set_font(FONT_FILE_DEFAULT, 15)
 t.clear_frame()
+t.toggle_show_cursor(True)
 
 # -- Initial prompt --
 t.set_prompt(f"\x1b[91m{USERNAME}\x1b[0m@\x1b[93mgithub\x1b[0m ~> ")
