@@ -3,6 +3,9 @@ from datetime import datetime
 import os
 import requests
 
+# Font configuration for logo animation
+FONT_FILE_LOGO = "./fonts/vtks-blocketo.regular.ttf"
+
 # ============================================
 # Terminal GIF with GitHub Stats
 # ============================================
@@ -22,7 +25,7 @@ import requests
 USERNAME = (
     os.environ.get("GITHUB_REPOSITORY_OWNER")
     or os.environ.get("GIT_USERNAME")
-    or "dbuzatto"
+    or "kienpham07"
 )
 
 # Function to fetch real number of repos
@@ -53,6 +56,27 @@ total_repos = get_total_repos(USERNAME)
 
 # Terminal settings
 t = gifos.Terminal(width=700, height=450, xpad=10, ypad=10)
+
+# -- Boot / Logo Scramble Animation --
+t.gen_text("Initiating Boot Sequence ", row_num=1, contin=True)
+t.gen_typing_text(".....", row_num=1, contin=True)
+t.gen_text("\x1b[96m", row_num=1, count=0, contin=True)  # Set color buffer
+
+t.set_font(FONT_FILE_LOGO, 66)
+os_logo_text = "GIF OS"
+mid_row = (t.num_rows + 1) // 2
+mid_col = (t.num_cols - len(os_logo_text) + 1) // 2
+
+effect_lines = gifos.effects.text_scramble_effect_lines(
+    os_logo_text, 3, include_special=False
+)
+for i in range(len(effect_lines)):
+    t.delete_row(mid_row + 1)
+    t.gen_text(effect_lines[i], mid_row + 1, mid_col + 1)
+
+# Reset to default terminal font
+t.set_font()
+t.clear_frame()
 
 # -- Initial prompt --
 t.set_prompt(f"\x1b[91m{USERNAME}\x1b[0m@\x1b[93mgithub\x1b[0m ~> ")
