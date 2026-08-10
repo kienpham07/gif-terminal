@@ -57,6 +57,10 @@ total_repos = get_total_repos(USERNAME)
 # Terminal settings
 t = gifos.Terminal(width=700, height=450, xpad=10, ypad=10)
 
+# Capture initial default font settings
+default_font = t.font_file
+default_font_size = t.font_size
+
 # -- Boot / Logo Scramble Animation --
 t.gen_text("Initiating Boot Sequence ", row_num=1, contin=True)
 t.gen_typing_text(".....", row_num=1, contin=True)
@@ -75,7 +79,7 @@ for i in range(len(effect_lines)):
     t.gen_text(effect_lines[i], mid_row + 1, mid_col + 1)
 
 # Reset to default terminal font
-t.set_font()
+t.set_font(default_font, default_font_size)
 t.clear_frame()
 
 # -- Initial prompt --
